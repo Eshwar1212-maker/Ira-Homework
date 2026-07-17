@@ -30,7 +30,6 @@ Welcome to your Contact Book!
 Enter your choice:
 ~~~
 
-
 ### Requirements
 
 - Use a loop to keep the menu running until the user picks 4
