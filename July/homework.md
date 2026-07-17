@@ -1,67 +1,20 @@
-## Problem 9A: Numbered List
-Using the same `fruits` list, print each fruit with its position number:
+## Problem 1
 
-```
-1. I love apples!
-2. I love bananas!
-3. I love mangos!
-4. I love grapes!
-5. I love strawberrys!
-```
+## Problem 9E: Build a Filtered List
 
-*(Hint: you'll need `enumerate()` — look it up on google!
+You have a list of numbers:
 
----
+~~~python
+numbers = [3, 7, 12, 5, 18, 2, 9, 14]
+~~~
 
-## Problem 9B: Uppercase Shouting
-Same list, but print every fruit in ALL CAPS:
+Loop through `numbers` and build a **brand new list** called `big_number_messages` that only includes numbers **greater than 6**. Each item in the new list should be the sentence `"I found a big number: 12!"` (using the actual number).
 
-```
-I LOVE APPLES!
-I LOVE BANANAS!
-I LOVE MANGOS!
-I LOVE GRAPES!
-I LOVE STRAWBERRYS!
-```
+Print the new list at the end.
 
-*(Hint: strings have a method that makes them shout…)*
+**Expected output:**
+~~~
+['I found a big number: 7!', 'I found a big number: 12!', 'I found a big number: 18!', 'I found a big number: 9!', 'I found a big number: 14!']
+~~~
 
----
-
-## Problem 9C: Length Check
-Loop through the fruits list and print the fruit **only if its name is longer than 5 characters**:
-
-```
-bananas
-mangos
-grapes
-strawberrys
-```
-
-*(Hint: `len()` and an `if` statement inside your loop!)*
-
----
-
-## Problem 9D: Build a New List
-Instead of printing, loop through `fruits` and build a **brand new list** called `love_messages` where each item is the full sentence (e.g. `"I love apples!"`). Then print the new list at the end.
-
-Expected output:
-
-```
-['I love apples!', 'I love bananas!', 'I love mangos!', 'I love grapes!', 'I love strawberrys!']
-```
-
-*(Hint: `.append()` is your friend!)*
-
----
-
-## Problem 10A: Keys AND Values
-Same `pet` dictionary — now print **both** the key and value on each line:
-
-```
-name : Buddy
-animal : Dog
-age : 3
-```
-
-*(Hint: there's a dictionary method that gives you both at once…)*
+*(Hint: You'll need `.append()` AND an `if` statement inside your loop!)*
