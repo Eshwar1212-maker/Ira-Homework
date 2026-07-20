@@ -1,7 +1,14 @@
 ## Homework Set 2: Dictionaries, Error Handling & Real Programs 🔥
 ### (Level Up — you've earned this)
 
----
+Links and Resources:
+
+Read these articles as part of your HW
+-https://blog.codacy.com/what-is-clean-code
+-
+-
+-
+
 
 ### Problem 1: Default Parameters
 Write a function called `greet` that takes a name **and** a greeting, but the greeting defaults to `"Hello"` if none is given.
