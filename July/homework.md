@@ -1,81 +1,101 @@
-## Homework: Functions, Loops, String Methods & File I/O
+## Homework Set 2: Dictionaries, Error Handling & Real Programs 🔥
+### (Level Up — you've earned this)
 
 ---
 
-### Problem 1: Your First Function
-Write a function called `greet` that takes a name as a parameter and prints `"Hello, Alice!"` (using the actual name passed in). Call it 3 times with different names.
-
----
-
-### Problem 2: Function with Return
-Write a function called `add_numbers` that takes two numbers as parameters and **returns** their sum. Print the result when you call it.
-
+### Problem 1: Default Parameters
+Write a function called `greet` that takes a name **and** a greeting, but the greeting defaults to `"Hello"` if none is given.
 ~~~
-add_numbers(3, 5) → should print 8
+greet("Alice") → prints "Hello, Alice!"
+greet("Alice", "Welcome back") → prints "Welcome back, Alice!"
 ~~~
 
 ---
 
-### Problem 3: Loop Inside a Function
-Write a function called `countdown` that takes a number and prints a countdown from that number down to 1.
-
+### Problem 2: Find the Max (No Cheating!)
+Write a function called `find_biggest` that takes a **list of numbers** and returns the biggest one — **without** using Python's built-in `max()`. Use a loop.
 ~~~
-countdown(5) → prints 5, 4, 3, 2, 1
-~~~
-
----
-
-### Problem 4: While Loop Menu
-Write a simple while loop that keeps asking the user `"Do you want to continue? (yes/no)"` and only stops when they type `no`.
-
----
-
-### Problem 5: String Methods - Cleanup
-Ask the user to type their name. Use `.strip()` to remove extra spaces and `.lower()` to make it all lowercase. Print the cleaned version.
-
-~~~
-Input: "  ALicE  " → Output: "alice"
+find_biggest([3, 41, 12, 9]) → returns 41
 ~~~
 
 ---
 
-### Problem 6: String Methods - Split
-You have this string:
+### Problem 3: Your First Dictionary
+Create a dictionary called `phone_book` with 3 names as keys and phone numbers as values. Then ask the user for a name and print that person's number.
+~~~
+phone_book = {"Alice": "123-4567", "Bob": "555-0199", "Cara": "888-2222"}
+Input: "Bob" → Output: "Bob's number is 555-0199"
+~~~
+
+---
+
+### Problem 4: Handling Missing Keys
+Improve Problem 3: if the user types a name that's **not** in the dictionary, print `"Sorry, no contact found."` instead of crashing. (Hint: `in` keyword or `.get()`)
+
+---
+
+### Problem 5: try / except — Crash-Proof Input
+Ask the user for their age. If they type something that isn't a number, don't crash — catch the error with `try` / `except` and print `"That's not a number!"`. Keep asking in a while loop until they enter a valid number.
+~~~
+Input: "banana" → "That's not a number!"
+Input: "15" → "Got it, you are 15."
+~~~
+
+---
+
+### Problem 6: Word Counter
+Write a function called `count_words` that takes a sentence and returns a **dictionary** where each word is a key and the value is how many times it appears.
+~~~
+count_words("the cat and the dog") → {"the": 2, "cat": 1, "and": 1, "dog": 1}
+~~~
+
+---
+
+### Problem 7: List Comprehension
+You know loops — now the shortcut. Given this list:
 ~~~python
-sentence = "apples,bananas,mangos,grapes"
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ~~~
-Use `.split(",")` to turn it into a list and print each fruit on its own line.
-
----
-
-### Problem 7: Function + String Methods Together
-Write a function called `make_username` that takes a first name and last name, strips both, lowercases both, and returns them combined with an underscore.
-
+Use a **list comprehension** (one line!) to make a new list of only the even numbers, each multiplied by 10.
 ~~~
-make_username("  Alice ", " SMITH ") → returns "alice_smith"
+Result: [20, 40, 60, 80, 100]
 ~~~
 
 ---
 
-### Problem 8: Write to a File
-Write a program that asks the user for their favorite food and saves it to a file called `favorites.txt`. Print `"Saved!"` when done.
-
----
-
-### Problem 9: Read from a File
-Write a program that opens `favorites.txt` and prints whatever is inside it.
-
+### Problem 8: Parse a File Line by Line
+Remember `contacts.txt` from last homework (`Alice - 123-4567` format)? Write a function called `load_contacts` that reads the file line by line, splits each line on `" - "`, and returns a **dictionary** of name → phone number.
 ~~~
-Output: "Your favorite food is: pizza"
+load_contacts() → {"Alice": "123-4567", "Bob": "555-0199", ...}
 ~~~
 
 ---
 
-### Problem 10: Put It All Together
-Write a function called `save_contact` that takes a name and phone number, and **appends** them as a line to a file called `contacts.txt` in this format:
+### Problem 9: To-Do List App (Menu + Functions + Files)
+Build a small program with a while loop menu:
+~~~
+1. Add a task
+2. Show all tasks
+3. Quit
+~~~
+- "Add" appends the task to `todo.txt`
+- "Show" reads the file and prints each task with a number in front (`1. Buy milk`)
+- Use a **separate function** for each menu option
+- If the user picks an invalid option, print `"Invalid choice"` and show the menu again
+
+---
+
+### Problem 10: Final Boss — Grade Tracker 🏆
+Build a program that combines **everything**:
+- A function `add_student(name, grade)` that saves `name,grade` to `grades.txt` — but only if the grade is a valid number between 0 and 100 (use try/except!)
+- A function `show_report()` that reads the file into a dictionary, prints every student's grade, and then prints the **class average** and the **top student**
+- A while loop menu to run it all: Add Student / Show Report / Quit
 
 ~~~
-Alice - 123-4567
+Sample report:
+Alice: 92
+Bob: 78
+Cara: 85
+Class average: 85.0
+Top student: Alice 🏆
 ~~~
-
-Call the function 3 times with different contacts, then open the file and print all the lines.
